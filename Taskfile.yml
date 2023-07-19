@@ -1,0 +1,27 @@
+# https://taskfile.dev/
+
+version: "3"
+
+interval: 1s
+
+tasks:
+  install:
+    desc: Install dev dependencies
+    cmds:
+      - go install github.com/cosmtrek/air@latest
+      - go mod download
+
+  dev:
+    desc: Run the web app
+    cmds:
+      - air
+
+  db:
+    desc: Run the db using docker
+    cmds:
+      - docker-compose up db -d
+
+  app:
+    desc: Run the app using docker
+    cmds:
+      - docker-compose up go-template -d
