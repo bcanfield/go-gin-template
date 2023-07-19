@@ -40,7 +40,7 @@ func main() {
 
 	// Start Server
 	appPort := os.Getenv("APP_PORT")
-	log.Printf("Running Analytics on port %s", appPort)
+	log.Printf("Running server on port %s", appPort)
 	router.Run(fmt.Sprintf(":%s", appPort))
 }
 
